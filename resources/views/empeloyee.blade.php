@@ -1,6 +1,26 @@
 <x-app>
     <x-slot name='title'>Employees</x-slot>
     <x-slot name='header'>Employees</x-slot>
+
+    <div class="container">
+        @if(session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+
+        @if(session('edited'))
+        <div class="alert alert-primary">
+            {{ session('edited') }}
+        </div>
+        @endif
+
+        @if(session('deleted'))
+        <div class="alert alert-danger">
+            {{ session('deleted') }}
+        </div>
+    @endif
+
     <div class="table-responsive">
         <table class="table table-light">
             <thead>
@@ -32,10 +52,11 @@
                         <td>
                             <a href="{{ url('edit/' .$employee->id) }}" class="btn btn-primary">Edit</a>
                             <a href="{{ url('delete/' .$employee->id) }}" class="btn btn-danger">remove</a>
+                            <a href="{{ url('create/') }}" class="btn btn-dark">create new</a>
 
                         </td>
                     </tr>
-                @empty
+                    @empty
                     <tr>
                         <td colspan="10">No Data Found</td>
                     </tr>

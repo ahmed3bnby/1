@@ -35,5 +35,10 @@ require __DIR__.'/auth.php';
 Route::get('/employees',[EmpeloyeeController::class ,'employees'])->name('employees');;
 
 Route::get('edit/{id}', [EmpeloyeeController::class ,'edit']);
+// Route::get('delete/{id}', [EmpeloyeeController::class ,'delete'])->name('delete');
 Route::get('delete/{id}', [EmpeloyeeController::class ,'delete']);
-Route::put('update-data/{id}', [EmpeloyeeController::class ,'update']);
+Route::put('update-data/{id}', [EmpeloyeeController::class ,'update'])->name('update');
+
+
+Route::get('create/', [EmpeloyeeController::class , 'create'])->name('employees.create');
+Route::post('/employees', [EmpeloyeeController::class , 'store'])->name('employees.store');

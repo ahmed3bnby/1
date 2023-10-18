@@ -36,12 +36,14 @@
                     <input type="text" class="form-control" id="age" name="age" value="{{ $employees->age }}">
                 </div>
                 <div class="form-group">
-                    <label for="first_name">Gender</label>
-                    <input type="text" class="form-control" id="gender" name="gender" value="{{ $employees->gender }}">
+                    <label for="gender">Gender</label>
+                    <select class="form-control" id="gender" name="gender">
+                        <option value="Male" {{ old('gender') == 'Male' ? 'selected' : '' }}>Male</option>
+                        <option value="Female" {{ old('gender') == 'Female' ? 'selected' : '' }}>Female</option>
+                    </select>
                 </div>
 
             <button type="submit" class="btn btn-primary">Update</button>
         </form>
     </div>
 </x-app>
-
