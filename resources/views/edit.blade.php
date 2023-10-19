@@ -1,9 +1,15 @@
+@extends('layouts.app')
+
+@section('content')
+
 <x-app>
     <x-slot name='title'>Employees</x-slot>
-    <x-slot name='header'>Employees</x-slot>
+    <div class="flex justify-center">
+        <h1 class="mt-4 text-2xl text-blue-800">Edit Employee Data</h1>
+    </div>
+
 
     <div class="container">
-        <h1>Edit Employee</h1>
             <form action="{{ url('update-data/'.$employees->id) }}" method="POST">
                 {{ csrf_field() }}
                 @method('put')
@@ -42,8 +48,10 @@
                         <option value="Female" {{ old('gender') == 'Female' ? 'selected' : '' }}>Female</option>
                     </select>
                 </div>
+                <a href="{{ url('employees/') }}" class="btn btn-danger">Cancel</a>
+            <button type="submit" class="btn btn-primary">Confirm</button>
 
-            <button type="submit" class="btn btn-primary">Update</button>
         </form>
     </div>
 </x-app>
+@endsection

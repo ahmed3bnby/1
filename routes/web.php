@@ -42,3 +42,15 @@ Route::put('update-data/{id}', [EmpeloyeeController::class ,'update'])->name('up
 
 Route::get('create/', [EmpeloyeeController::class , 'create'])->name('employees.create');
 Route::post('/employees', [EmpeloyeeController::class , 'store'])->name('employees.store');
+
+Route::get('user/{id}', [EmpeloyeeController::class ,'show'])->name('employees.show');
+
+//Route::get('/employees/{id}', [EmpeloyeeController::class ,'show'])
+
+
+
+//Route::get('/search', [EmpeloyeeController::class , 'index'])->name('search');
+
+
+
+

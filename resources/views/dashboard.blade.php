@@ -1,5 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
+
+
         <div class="text-2xl text-gray-800 dark:text-gray-200 font-semibold">
             Welcome To Dashboard
         </div>
@@ -24,3 +26,5 @@
         </div>
     </div>
 </x-app-layout>
+
+
